@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t urazov/docker-react -f Dockerfile.env .
+
+script:
+  - docker run urazov/docker-react npm run test -- --coverage
