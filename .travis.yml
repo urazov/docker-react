@@ -6,4 +6,4 @@ before_install:
   - docker build -t urazov/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run urazov/docker-react npm run test -- --coverage
+  - docker run -e CI=true urazov/docker-react npm run test -- --coverage
